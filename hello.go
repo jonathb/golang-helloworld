@@ -25,12 +25,10 @@ func do1(a1 string) {
 
 func main() {
 
-    wholecomlin := os.Args
-    fmt.Println(wholecomlin)
-    justargs := os.Args[1:]
-    fmt.Println(justargs)
-    numargs := len(os.Args)
-    fmt.Println(numargs)
+    wholeline := os.Args  ;
+    justargs := os.Args[1:] ; numargs := len(os.Args)
+    fmt.Println(wholeline)
+    fmt.Print(numargs) ; fmt.Print(" : ") ; fmt.Println(justargs)
     switch numargs {
     case 1:
     case 2: do1(os.Args[1])
