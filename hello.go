@@ -31,10 +31,13 @@ func main() {
     fmt.Println(justargs)
     numargs := len(os.Args)
     fmt.Println(numargs)
-    if numargs == 2 {do1(os.Args[1])}
-    if numargs == 3 {do2(os.Args[1],os.Args[2])}
-    if numargs == 4 {do3(os.Args[1],os.Args[2],os.Args[3])}
-
+    switch numargs {
+    case 1:
+    case 2: do1(os.Args[1])
+    case 3: do2(os.Args[1],os.Args[2])
+    case 4: do3(os.Args[1],os.Args[2],os.Args[3])
+    default: panic("Dont grok more than 3 args\n")
+    }
     fmt.Printf(stringutil.Reverse("dlrow ,olleh") + "\n")
 }
 
