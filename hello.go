@@ -4,8 +4,14 @@ import (
 
         "os"
         "fmt"
- 	"github.com/jonathb/stringutil"
+ 	"github.com/jonathb/gutil"
 )
+
+func doALL(a [] string) {
+   fmt.Print("Got huge batch of ") ;fmt.Print(len(a)) ; fmt.Print(" args: ")
+   fmt.Println(a)
+   if len(a) >= 10 {panic("Dont grok so many args\n")}
+}
 
 func doX(as ... string) {
    fmt.Print("Got long list of ") ;fmt.Print(len(as)) ; fmt.Print(" args: ")
@@ -34,8 +40,7 @@ func do1(a1 string) {
 
 func main() {
 
-  wholeline := os.Args  ;
-  justargs := os.Args[1:] ; numargs := len(os.Args)
+  wholeline := os.Args ;justargs := os.Args[1:] ;numargs := len(os.Args) -1
   fmt.Println(wholeline)
   fmt.Print(numargs) ; fmt.Print(" : ") ; fmt.Println(justargs)
   switch numargs {
@@ -46,9 +51,9 @@ func main() {
   case 5: doX(os.Args[1],os.Args[2],os.Args[3],os.Args[4])
   case 6: doX(os.Args[1],os.Args[2],os.Args[3],os.Args[4],os.Args[5])
   case 7: doX(os.Args[1],os.Args[2],os.Args[3],os.Args[4],os.Args[5],os.Args[6])
-  default: panic("Dont grok so many args\n")
+  default: doALL(os.Args[1:]) // isnt go slice brill?
   }
-  fmt.Printf(stringutil.Reverse("dlrow ,olleh") + "\n")
+  fmt.Printf(gutil.Reverse("dlrow ,olleh") + "\n")
 }
 
 
