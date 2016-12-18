@@ -7,3 +7,5 @@ Of particular interest are:
 - classes and goroutines
 
 - the builtin packages
+ 
+- PS: test the new gpg key
