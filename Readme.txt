@@ -1,4 +1,4 @@
-Obviously a teach-myself-go thing.
+3 years ago I wanted to learn golang thing. ?TODO a better idea would be to merge this into ztools and colect some "real" golang toos, now that HelloWorld-from-golang is no longer interesting.
 
 Of particular interest are:
 
